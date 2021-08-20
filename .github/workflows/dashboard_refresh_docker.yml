@@ -3,6 +3,7 @@ name: Data Refresh
 on:
   schedule:  
     - cron:  '40 13 * * *'
+  workflow_dispatch:
 jobs:
   build:
     name: refresh the dashboard
