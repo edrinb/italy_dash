@@ -1,7 +1,10 @@
 #!/bin/bash
 
-echo "Rendering the dashboard..."
+echo "Installing needed packages..."
 
+Rscript -e "install.packages(\"readr\", repos=\"https://cran.rstudio.com\")"
+
+echo "Rendering the dashboard..."
 Rscript -e "rmarkdown::render_site()"
 
 if [[ "$(git status --porcelain)" != "" ]]; then
